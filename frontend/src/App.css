@@ -1,0 +1,241 @@
+.main-content {
+    margin-left: 220px;
+    min-height: 100vh;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 32px auto;
+    padding: 0 24px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 0.5px solid #e8e4dc;
+    box-shadow: 0 1px 8px rgba(0, 0, 0, 0.06);
+}
+
+th {
+    background: #f8fafc;
+    color: #888;
+    padding: 11px 16px;
+    text-align: left;
+    font-size: 12px;
+    font-weight: 500;
+    border-bottom: 0.5px solid #e8e4dc;
+}
+
+td {
+    padding: 13px 16px;
+    border-bottom: 0.5px solid #f0ede8;
+    font-size: 14px;
+    color: #374151;
+}
+
+tr:last-child td {
+    border-bottom: none;
+}
+
+tr:hover td {
+    background: #f8fafc;
+}
+
+.page-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.page-header h1 {
+    font-size: 22px;
+    font-weight: 500;
+    color: #1a1a1a;
+}
+
+.btn {
+    padding: 8px 16px;
+    border: 0.5px solid #e8e4dc;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: 500;
+    transition: background 0.15s, border-color 0.15s;
+    background: white;
+    color: #1a1a1a;
+}
+
+.btn:hover {
+    background: #f1f5f9;
+    border-color: #d4d0c8;
+}
+
+.btn-primary, .btn-success {
+    background: #0ea5e9;
+    color: white;
+    border-color: #0ea5e9;
+}
+
+.btn-primary:hover, .btn-success:hover {
+    background: #0284c7;
+    border-color: #0284c7;
+}
+
+.btn-danger {
+    background: #ef4444;
+    color: white;
+    border-color: #ef4444;
+}
+
+.btn-danger:hover {
+    background: #dc2626;
+    border-color: #dc2626;
+}
+
+.btn-warning {
+    background: white;
+    color: #92400e;
+    border-color: #e2e8f0;
+}
+
+.btn-warning:hover {
+    background: #f1f5f9;
+    border-color: #e2e8f0;
+}
+
+.modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.modal {
+    background: white;
+    border-radius: 10px;
+    padding: 28px 32px;
+    width: 480px;
+    max-width: 95vw;
+    border: 0.5px solid #e8e4dc;
+}
+
+.modal h2 {
+    margin-bottom: 20px;
+    font-size: 18px;
+    font-weight: 500;
+    color: #1a1a1a;
+}
+
+.form-group {
+    margin-bottom: 14px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 500;
+    font-size: 13px;
+    color: #888;
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 8px 12px;
+    border: 0.5px solid #e8e4dc;
+    border-radius: 6px;
+    font-size: 14px;
+    outline: none;
+    background: white;
+    color: #1a1a1a;
+    transition: border-color 0.15s;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    border-color: #aaa;
+    background: white;
+}
+
+.modal-actions {
+    display: flex;
+    gap: 8px;
+    justify-content: flex-end;
+    margin-top: 20px;
+}
+
+.badge {
+    padding: 3px 10px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.badge-blue { background: #eff6ff; color: #1d4ed8; }
+.badge-green { background: #f0fdf4; color: #166534; }
+.badge-orange { background: #fff7ed; color: #9a3412; }
+.badge-red { background: #fef2f2; color: #991b1b; }
+
+.loader {
+    text-align: center;
+    padding: 60px;
+    color: #aaa;
+    font-size: 15px;
+}
+
+::placeholder {
+    color: #c4c4c4;
+    opacity: 1;
+}
+
+@media (max-width: 768px) {
+    .sidebar-desktop { display: none !important; }
+    .mobile-header { display: flex !important; }
+    .mobile-drawer { display: block !important; }
+    .mobile-overlay { display: block !important; }
+
+    .main-content {
+        margin-left: 0;
+        padding-top: 56px;
+    }
+
+    .container {
+        margin: 16px auto;
+        padding: 0 12px;
+    }
+
+    .page-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+    }
+
+    .page-header h1 { font-size: 18px; }
+
+    table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+
+    .modal {
+        width: 95vw;
+        padding: 20px;
+    }
+
+    div[style*="repeat(3"] {
+        grid-template-columns: 1fr !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .page-header h1 { font-size: 16px; }
+    th, td { padding: 8px 10px; font-size: 13px; }
+}
