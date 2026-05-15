@@ -1,5 +1,5 @@
 -- БАЗА ДАННЫХ: mobile_phones_db
--- Система учёта мобильных телефонов в сети магазинов
+-- Система учета мобильных телефонов в сети магазинов
 
 -- ЧАСТЬ 1: СОЗДАНИЕ БАЗЫ ДАННЫХ И ТАБЛИЦ
 
@@ -385,7 +385,7 @@ FROM product_configurations pc
 INNER JOIN models m ON pc.model_code = m.model_code
 ORDER BY pc.retail_price DESC;
 
--- CASE: расширенная категоризация и объём памяти
+-- CASE: расширенная категоризация и объем памяти
 SELECT
     m.model_name AS 'Модель',
     pc.retail_price AS 'Цена',
@@ -461,9 +461,6 @@ SELECT * FROM v_sales_analytics WHERE `Магазин` = 'Электроника
 SELECT `Категория`, COUNT(*) AS 'Продаж', SUM(`Сумма`) AS 'Выручка'
 FROM v_sales_analytics GROUP BY `Категория`;
 
--- Пример использования VIEW остатков: что есть в наличии в Москве
-SELECT * FROM v_stock WHERE `Магазин` = 'Электроника Центр';
-
 -- ЧАСТЬ 3: ПРОЦЕДУРНЫЕ РАСШИРЕНИЯ
 
 -- Вспомогательная таблица для хранения статистики
@@ -479,7 +476,7 @@ CREATE TABLE sales_statistics (
     max_sale DECIMAL(12, 2)
 ) ENGINE=InnoDB;
 
--- PROCEDURE: расчёт статистики продаж за период
+-- PROCEDURE: расчет статистики продаж за период
 DELIMITER //
 CREATE PROCEDURE calculate_sales_statistics(
     IN p_start_date DATE,
